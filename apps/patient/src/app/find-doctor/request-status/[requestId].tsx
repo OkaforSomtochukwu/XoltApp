@@ -201,6 +201,12 @@ export default function RequestStatusScreen() {
                 >
                   Chat with doctor
                 </Button>
+                <Button
+                  variant="primary"
+                  onPress={() => router.push(`/find-doctor/request-status/${requestId}/call`)}
+                >
+                  Start call
+                </Button>
                 <Button variant="ghost" onPress={handleEndConsultation} disabled={ending}>
                   {ending ? 'Ending…' : 'End consultation'}
                 </Button>

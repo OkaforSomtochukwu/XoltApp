@@ -7,6 +7,7 @@ export default function FindDoctorLayout() {
       <Stack.Screen name="[doctorId]" options={{ title: 'Doctor' }} />
       <Stack.Screen name="request-status/[requestId]" options={{ title: 'Request status' }} />
       <Stack.Screen name="request-status/[requestId]/chat" options={{ title: 'Chat' }} />
+      <Stack.Screen name="request-status/[requestId]/call" options={{ title: 'Call', headerShown: false }} />
     </Stack>
   );
 }

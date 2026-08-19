@@ -21,3 +21,6 @@ export type { ConsultationStatusCardProps } from "./ConsultationStatusCard";
 
 export { ChatView } from "./ChatView";
 export type { ChatViewProps } from "./ChatView";
+
+export { VideoCallView } from "./VideoCallView";
+export type { VideoCallViewProps, VideoCallTokenResult } from "./VideoCallView";

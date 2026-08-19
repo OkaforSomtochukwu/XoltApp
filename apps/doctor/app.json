@@ -47,6 +47,22 @@
         {
           "locationWhenInUsePermission": "Xolt uses your location so patients can find you nearby and to share it during an active consultation."
         }
+      ],
+      "@stream-io/video-react-native-sdk",
+      [
+        "@config-plugins/react-native-webrtc",
+        {
+          "cameraPermission": "$(PRODUCT_NAME) requires camera access to show video during a consultation call.",
+          "microphonePermission": "$(PRODUCT_NAME) requires microphone access to capture audio during a consultation call."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24
+          }
+        }
       ]
     ],
     "experiments": {

@@ -7,6 +7,7 @@ export default function RequestsLayout() {
       <Stack.Screen name="[requestId]" options={{ title: 'Request' }} />
       <Stack.Screen name="[requestId]/records" options={{ title: 'Patient records' }} />
       <Stack.Screen name="[requestId]/chat" options={{ title: 'Chat' }} />
+      <Stack.Screen name="[requestId]/call" options={{ title: 'Call', headerShown: false }} />
     </Stack>
   );
 }

@@ -9,6 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.112.3",
     "@xolt/shared": "workspace:*",
     "@xolt/ui-tokens": "workspace:*",
     "next": "16.3.1",

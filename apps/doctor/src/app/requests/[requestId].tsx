@@ -140,6 +140,12 @@ export default function ActiveRequestScreen() {
                 >
                   Chat with patient
                 </Button>
+                <Button
+                  variant="primary"
+                  onPress={() => router.push(`/requests/${requestId}/call`)}
+                >
+                  Start call
+                </Button>
                 <Button variant="ghost" onPress={handleEndConsultation} disabled={ending}>
                   {ending ? 'Ending…' : 'End consultation'}
                 </Button>
