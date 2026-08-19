@@ -1,0 +1,9 @@
+-- Xolt Supabase schema.
+--
+-- Individual changes belong in supabase/migrations/ as timestamped SQL files
+-- — that's the actual source of truth. This file is meant to hold a
+-- consolidated snapshot (e.g. `supabase db dump --schema public`), but no
+-- Supabase CLI/live database has been available in this dev environment to
+-- generate one from, so it's left empty rather than a hand-copied duplicate
+-- that would drift from the migrations. Regenerate it here once a live
+-- database exists.

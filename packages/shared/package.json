@@ -1,0 +1,20 @@
+{
+  "name": "@xolt/shared",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
+    "expo-location": "~57.0.11"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
