@@ -15,14 +15,28 @@ const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 
+// CORS: every prior test of this function used native fetch (mobile) or a
+// Node script, neither of which is subject to browser CORS — this went
+// unnoticed until a real browser (web build of apps/patient) called it and
+// the preflight OPTIONS request failed with no Access-Control-Allow-Origin
+// header. Supabase does not add this automatically; every Edge Function
+// callable from a browser needs it handled explicitly.
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+};
+
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { "Content-Type": "application/json" },
+    headers: { ...CORS_HEADERS, "Content-Type": "application/json" },
   });
 }
 
 Deno.serve(async (req) => {
+  if (req.method === "OPTIONS") {
+    return new Response(null, { headers: CORS_HEADERS });
+  }
   if (req.method !== "POST") {
     return json({ error: "Method not allowed" }, 405);
   }
